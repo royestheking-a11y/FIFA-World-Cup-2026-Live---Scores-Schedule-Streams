@@ -279,7 +279,6 @@ async function backgroundRefresh() {
     const delay = hasLive ? 15000 : 60000;
     setTimeout(backgroundRefresh, delay);
 }
-backgroundRefresh();
 
 // ==============================
 // API Routes
@@ -383,8 +382,9 @@ app.get('/{*splat}', (req, res) => {
 // Export for Vercel Serverless Function
 module.exports = app;
 
-// Start server for local development
-if (process.env.NODE_ENV !== 'production') {
+// Start server and background tasks for local development only
+if (!process.env.VERCEL) {
+    backgroundRefresh();
     const PORT = 3001;
     app.listen(PORT, () => {
         console.log(`🌍 World Cup 2026 Live Server → http://localhost:${PORT}`);
