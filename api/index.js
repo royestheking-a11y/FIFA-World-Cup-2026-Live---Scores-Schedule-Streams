@@ -284,21 +284,22 @@ backgroundRefresh();
 // ==============================
 // API Routes
 // ==============================
+const apiRouter = express.Router();
 
-// GET /api/matches — today + nearby matches (live/recent/upcoming)
-app.get('/api/matches', async (req, res) => {
+// GET /matches — today + nearby matches (live/recent/upcoming)
+apiRouter.get('/matches', async (req, res) => {
     const matches = await fetchMatches();
     res.json(matches);
 });
 
-// GET /api/groups — live group standings
-app.get('/api/groups', async (req, res) => {
+// GET /groups — live group standings
+apiRouter.get('/groups', async (req, res) => {
     const groups = await fetchGroups();
     res.json(groups);
 });
 
-// GET /api/schedule?date=YYYYMMDD — schedule for specific date
-app.get('/api/schedule', async (req, res) => {
+// GET /schedule?date=YYYYMMDD — schedule for specific date
+apiRouter.get('/schedule', async (req, res) => {
     const dateStr = req.query.date;
     if (!dateStr || !/^\d{8}$/.test(dateStr)) {
         return res.status(400).json({ error: 'date param required, format YYYYMMDD' });
@@ -307,8 +308,8 @@ app.get('/api/schedule', async (req, res) => {
     res.json(matches);
 });
 
-// GET /api/schedule/range — all matches for a range of dates
-app.get('/api/schedule/range', async (req, res) => {
+// GET /schedule/range — all matches for a range of dates
+apiRouter.get('/schedule/range', async (req, res) => {
     // Generate all World Cup 2026 group stage dates: June 11 – June 27
     const allDates = [];
     const start = new Date('2026-06-11');
@@ -350,8 +351,8 @@ app.get('/api/schedule/range', async (req, res) => {
     res.json(allMatches);
 });
 
-// GET /api/events — SSE endpoint for real-time push notifications
-app.get('/api/events', (req, res) => {
+// GET /events — SSE endpoint for real-time push notifications
+apiRouter.get('/events', (req, res) => {
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
@@ -370,9 +371,12 @@ app.get('/api/events', (req, res) => {
     });
 });
 
-// Serve the main app
+// Mount the router on both /api and / to handle Vercel routing
+app.use('/api', apiRouter);
+app.use('/', apiRouter);
+
 // Serve the main app for local dev
-app.get('/{*splat}', (req, res) => {
+app.get('/(.*)', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
