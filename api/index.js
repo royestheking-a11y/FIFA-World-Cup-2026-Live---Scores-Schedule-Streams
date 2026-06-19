@@ -376,7 +376,7 @@ app.use('/api', apiRouter);
 app.use('/', apiRouter);
 
 // Serve the main app for local dev
-app.get('/(.*)', (req, res) => {
+app.get('/{*splat}', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
