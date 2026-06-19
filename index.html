@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- SEO & Meta Tags -->
+    <title>FIFA World Cup 2026 Live - Scores, Schedule & Streams</title>
+    <meta name="description" content="Get real-time live scores, comprehensive match schedules, group standings, knockout stage brackets, and live streaming links for the FIFA World Cup 2026. Sponsored by RizQara Tech.">
+    <meta name="keywords" content="World Cup 2026, FIFA World Cup, live scores, football, soccer, match schedule, World Cup live stream, group standings, knockout stage, Rizqara Tech">
+    <meta name="author" content="RizQara Tech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.rizqara.tech/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.rizqara.tech/">
+    <meta property="og:title" content="FIFA World Cup 2026 Live - Scores, Schedule & Streams">
+    <meta property="og:description" content="Experience the FIFA World Cup 2026 with real-time live scores, comprehensive match schedules, and live streaming links.">
+    <meta property="og:image" content="https://a.espncdn.com/i/leaguelogos/soccer/500/4.png">
+    <meta property="og:site_name" content="World Cup 2026 Live">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.rizqara.tech/">
+    <meta name="twitter:title" content="FIFA World Cup 2026 Live - Scores, Schedule & Streams">
+    <meta name="twitter:description" content="Experience the FIFA World Cup 2026 with real-time live scores, comprehensive match schedules, and live streaming links.">
+    <meta name="twitter:image" content="https://a.espncdn.com/i/leaguelogos/soccer/500/4.png">
+
+    <meta name="theme-color" content="#800000">
+    <link rel="icon" type="image/x-icon" href="public/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="public/favicon/favicon.svg">
+    <link rel="apple-touch-icon" href="public/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="public/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+    <!-- Premium Loading Screen -->
+    <div id="premium-loader" class="premium-loader">
+        <div class="loader-content">
+            <span class="material-symbols-rounded loader-icon">sports_soccer</span>
+            <h1 class="loader-title">World Cup 2026</h1>
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading latest matches...</div>
+        </div>
+    </div>
+    <!-- Top App Bar -->
+    <header class="app-bar">
+        <div class="app-bar-inner">
+            <div class="brand">
+                <span class="material-symbols-rounded brand-icon">sports_soccer</span>
+                <h1 class="brand-title">World Cup 2026</h1>
+            </div>
+            <button class="icon-btn" aria-label="Notifications" id="notification-btn">
+                <span class="material-symbols-rounded">notifications</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Live Matches Section -->
+        <section class="view active" id="view-live">
+            <div class="view-header">
+                <h2 class="view-title">Live & Recent</h2>
+                <div class="live-pulse-badge">
+                    <span class="pulse-dot"></span> LIVE
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-card" id="countdown-card" style="display: none; border-radius: var(--radius-lg); margin: 0 0 16px;">
+                <div class="countdown-title" id="countdown-title">Next Match In</div>
+                <div class="countdown-timer" id="countdown-timer">00:00:00</div>
+            </div>
+
+
+
+            <div class="matches-list" id="live-matches-list">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="view" id="view-schedule">
+            <div class="view-header">
+                <h2 class="view-title">Match Schedule</h2>
+            </div>
+            <div class="horizontal-scroll" id="schedule-filters">
+                <!-- JS populated -->
+            </div>
+            <div class="matches-list" id="schedule-matches-list">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Groups Section -->
+        <section class="view" id="view-groups">
+            <div class="view-header">
+                <h2 class="view-title">Group Standings</h2>
+            </div>
+            <div class="groups-list" id="groups-list">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Knockout Section -->
+        <section class="view" id="view-knockout">
+            <div class="view-header">
+                <h2 class="view-title">Knockout Stage</h2>
+            </div>
+            <div class="knockout-list" id="knockout-list">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Watch Section -->
+        <section class="view" id="view-watch">
+            <div class="view-header">
+                <h2 class="view-title">Where to Watch</h2>
+                <p class="view-subtitle">Official Free Broadcasters</p>
+            </div>
+
+            <!-- Premium Live Watch System -->
+            <div class="card" id="live-watch-card" style="margin-bottom: 16px; overflow: hidden;">
+                <!-- Header -->
+                <div style="
+                    background: var(--maroon);
+                    padding: 14px 16px;
+                    display: flex; align-items: center; justify-content: space-between;
+                ">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="material-symbols-rounded" style="color: #fff; font-size: 22px; font-variation-settings: 'FILL' 1;">live_tv</span>
+                        <div>
+                            <div style="font-weight: 800; font-size: 15px; color: #fff;">Live Watch</div>
+                            <div style="font-size: 11px; color: rgba(255,255,255,0.7);">FIFA World Cup 2026</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <span class="pulse-dot" style="background: #fff;"></span>
+                        <span style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px;">Live</span>
+                    </div>
+                </div>
+
+                <!-- Video Player -->
+                <div id="main-video-wrap" style="position: relative; background: #0a0a0a; aspect-ratio: 16/9;">
+                    <!-- Placeholder overlay (shown when no stream selected) -->
+                    <div id="video-placeholder" style="
+                        position: absolute; inset: 0;
+                        display: flex; flex-direction: column;
+                        align-items: center; justify-content: center;
+                        gap: 12px; background: #111;
+                        cursor: pointer;
+                    ">
+                        <div style="
+                            width: 64px; height: 64px; border-radius: 50%;
+                            background: var(--maroon);
+                            display: flex; align-items: center; justify-content: center;
+                            box-shadow: 0 0 0 12px rgba(138,21,56,0.15);
+                        ">
+                            <span class="material-symbols-rounded" style="color: #fff; font-size: 36px; font-variation-settings: 'FILL' 1;">play_circle</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-weight: 700; color: #fff; font-size: 15px;">Select a stream below</div>
+                            <div style="font-size: 12px; color: #888; margin-top: 4px;">Choose a source to start watching</div>
+                        </div>
+                    </div>
+                    <!-- Embedded iframe player (populated by JS) -->
+                    <iframe
+                        id="main-stream-iframe"
+                        style="width:100%;height:100%;border:none;display:none;"
+                        allow="autoplay; fullscreen; encrypted-media"
+                        referrerpolicy="no-referrer"
+                    ></iframe>
+                    <!-- HLS player fallback -->
+                    <video
+                        id="main-hls-player"
+                        controls
+                        style="width:100%;height:100%;display:none;background:#000;"
+                        playsinline
+                    ></video>
+                    <!-- Close stream button -->
+                    <button id="close-stream-btn" onclick="stopMainStream()" style="
+                        display: none;
+                        position: absolute; top: 8px; right: 8px;
+                        background: rgba(0,0,0,0.6); border: none;
+                        border-radius: 50%; width: 34px; height: 34px;
+                        color: #fff; cursor: pointer;
+                        display: none; align-items: center; justify-content: center;
+                    ">
+                        <span class="material-symbols-rounded" style="font-size: 18px;">close</span>
+                    </button>
+                </div>
+
+                <!-- Now Playing Label -->
+                <div id="now-playing-bar" style="
+                    display: none;
+                    padding: 10px 16px;
+                    background: var(--maroon-pale);
+                    border-bottom: 1px solid var(--border-light);
+                    font-size: 13px; font-weight: 600;
+                    color: var(--maroon);
+                    display: flex; align-items: center; gap: 8px;
+                ">
+                    <span class="material-symbols-rounded" style="font-size: 16px;">sensors</span>
+                    <span id="now-playing-label">Now Playing</span>
+                </div>
+
+                <!-- Source Selector -->
+                <div style="padding: 14px 16px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Available Streams</div>
+                    <div id="stream-source-list" style="display: flex; flex-direction: column; gap: 8px;">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div style="
+                    padding: 10px 16px 14px;
+                    border-top: 1px solid var(--border-light);
+                    font-size: 11px; color: var(--text-muted);
+                    display: flex; align-items: flex-start; gap: 6px;
+                ">
+                    <span class="material-symbols-rounded" style="font-size: 14px; margin-top: 1px;">info</span>
+                    <span>Streams are sourced from public broadcasters. If a stream fails, try another source. For best quality use the official broadcaster app for your region.</span>
+                </div>
+            </div>
+            
+            <div class="watch-list" id="watch-list">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Sponsor Section -->
+        <div style="text-align: center; padding: 24px 16px 32px; color: var(--text-muted); font-size: 12px;">
+            <div>Sponsored by</div>
+            <a href="https://www.rizqara.tech/" target="_blank" style="
+                display: inline-flex; align-items: center; gap: 6px;
+                color: var(--maroon); font-weight: 800; font-size: 15px;
+                text-decoration: none; margin-top: 4px;
+                background: var(--maroon-pale); padding: 6px 16px; border-radius: 20px;
+            ">
+                <span class="material-symbols-rounded" style="font-size: 18px;">code_blocks</span>
+                RizQara Tech
+            </a>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar (Mobile Native Feel) -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-view="live">
+            <span class="material-symbols-rounded nav-icon">sensors</span>
+            <span class="nav-label">Live</span>
+        </button>
+        <button class="nav-item" data-view="schedule">
+            <span class="material-symbols-rounded nav-icon">calendar_month</span>
+            <span class="nav-label">Schedule</span>
+        </button>
+        <button class="nav-item" data-view="groups">
+            <span class="material-symbols-rounded nav-icon">table_chart</span>
+            <span class="nav-label">Groups</span>
+        </button>
+        <button class="nav-item" data-view="knockout">
+            <span class="material-symbols-rounded nav-icon">emoji_events</span>
+            <span class="nav-label">Knockout</span>
+        </button>
+        <button class="nav-item" data-view="watch">
+            <span class="material-symbols-rounded nav-icon">tv</span>
+            <span class="nav-label">Watch</span>
+        </button>
+    </nav>
+
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-modal-content">
+            <div class="video-header">
+                <h3 id="video-title">Live Stream</h3>
+                <button class="icon-btn" id="close-video-btn">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            <div class="video-container">
+                <video id="live-video-player" controls autoplay></video>
+            </div>
+            <div class="video-status" id="video-status">Connecting to stream...</div>
+        </div>
+    </div>
+
+    <!-- HLS.js for IPTV/M3U8 support -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
